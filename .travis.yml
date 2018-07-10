@@ -1,27 +1,13 @@
-dist: trusty
-sudo: false
-language: python
-python: 3.6
+sudo: true
+language: minimal
 
-addons:
-  apt:
-    packages:
-      - liquidsoap
-      - liquidsoap-plugin-icecast
-      - liquidsoap-plugin-lame
-      - liquidsoap-plugin-alsa
 env:
   global:
     - KLANGBECKEN_DATA=data
     - KLANGBECKEN_API_SECRET=deadbeef
 
-install:
-  - pip install tox
-  - pip install .
-  - pip install coverage coveralls
-
 script:
-  - tox
+  - docker run --rm -ti -v $PWD:/usr/src/klangbecken -w /usr/src/klangbecken onegreyonewhite/tox:centos tox
   - coverage run --source=klangbecken_api -m unittest discover
   - coverage report -m
   - liquidsoap --version
