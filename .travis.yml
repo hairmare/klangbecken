@@ -6,6 +6,9 @@ env:
     - KLANGBECKEN_DATA=data
     - KLANGBECKEN_API_SECRET=deadbeef
 
+install:
+  - docker build -t liquidsoap https://github.com/radiorabe/docker-liquidsoap.git
+
 script:
   - docker run --rm -ti -v $PWD:/usr/src/klangbecken -w /usr/src/klangbecken onegreyonewhite/tox:centos tox
   - coverage run --source=klangbecken_api -m unittest discover
