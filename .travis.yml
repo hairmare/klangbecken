@@ -13,7 +13,7 @@ script:
   - docker run --rm -ti -v $PWD:/usr/src/klangbecken -w /usr/src/klangbecken onegreyonewhite/tox:centos tox
   - coverage run --source=klangbecken_api -m unittest discover
   - coverage report -m
-  - liquidsoap --version
+  - docker run --rm -ti iquidsoap --version
   - test -d $KLANGBECKEN_DATA || mkdir $KLANGBECKEN_DATA
   - test -f klangbecken.liq && liquidsoap --check klangbecken.liq
 
