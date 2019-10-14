@@ -780,15 +780,15 @@ class ProcessorsTestCase(unittest.TestCase):
         self.assertTrue("fileId2" in data)
 
         # Try duplicating file ids
-        with self.assertRaisesRegexp(UnprocessableEntity, "Duplicate"):
+        with self.assertRaisesRegex(UnprocessableEntity, "Duplicate"):
             index_processor(
                 self.tempdir, "music", "fileId2", ".ogg", [FileAddition(file_)]
             )
-        with self.assertRaisesRegexp(UnprocessableEntity, "Duplicate"):
+        with self.assertRaisesRegex(UnprocessableEntity, "Duplicate"):
             index_processor(
                 self.tempdir, "jingles", "fileId2", ".mp3", [FileAddition(file_)]
             )
-        with self.assertRaisesRegexp(UnprocessableEntity, "Duplicate"):
+        with self.assertRaisesRegex(UnprocessableEntity, "Duplicate"):
             index_processor(
                 self.tempdir, "music", "fileId2", ".mp3", [FileAddition(file_)]
             )
