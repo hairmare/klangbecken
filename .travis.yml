@@ -15,12 +15,10 @@ env:
     - KLANGBECKEN_DATA=/tmp/data
 
 install:
-  - pip install tox
-  - pip install .
-  - pip install coverage
-  - pip install codecov
+  - pip install -r requirements-dev.txt
 
 script:
+  - pre-commit run -a
   - tox
   - liquidsoap --version
   - test -d $KLANGBECKEN_DATA || mkdir $KLANGBECKEN_DATA

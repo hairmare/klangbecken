@@ -13,17 +13,27 @@
 * **mutagen** library for audio tag editing
 * **ffmpeg** binary for audio analysis
 
+## Contributing
+
 ### Development dependencies:
 
  * virtualenv/venv, setuptools, pip
- * tox
- * coverage
- * mock
- * flake8
 
-## Testing environment
+```bash
+pip install -r requirements-dev.txt
+```
 
-### Using Docker
+### pre-commit hook
+
+```bash
+pip install pre-commit
+pip install -r requirements-dev.txt -U
+pre-commit install
+```
+
+### Testing
+
+#### Using Docker
 
 To get a working test environment with Docker, you need one container with Icecast and another with liquidsoap
 

@@ -1,0 +1,17 @@
+-r requirements.txt
+black==18.9b0
+codecov==2.0.15
+factory-boy==2.11.1
+flake8==3.6.0
+flake8-debugger==3.1.0
+flake8-docstrings==1.5.0
+flake8-isort==2.6.0
+flake8-string-format==0.2.3
+flake8-tuple==0.2.13
+isort==4.3.4
+mock==2.0.0
+pre-commit==1.17.0
+pytest==4.1.1
+pytest-cov==2.6.1
+pytest-env==0.6.2
+tox==3.14.0
